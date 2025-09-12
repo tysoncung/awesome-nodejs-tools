@@ -1,0 +1,28 @@
+{
+  "name": "awesome-nodejs-tools",
+  "version": "1.0.0",
+  "description": "A curated list of awesome Node.js tools, libraries, and frameworks with rankings",
+  "main": "scripts/update-metrics.js",
+  "scripts": {
+    "update-metrics": "node scripts/update-metrics.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tysoncung/awesome-nodejs-tools.git"
+  },
+  "keywords": [
+    "nodejs",
+    "awesome",
+    "tools",
+    "libraries",
+    "frameworks"
+  ],
+  "author": "Tyson Cung <tyson.cung@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tysoncung/awesome-nodejs-tools/issues"
+  },
+  "homepage": "https://github.com/tysoncung/awesome-nodejs-tools#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}

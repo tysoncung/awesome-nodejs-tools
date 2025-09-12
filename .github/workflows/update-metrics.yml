@@ -1,0 +1,53 @@
+name: Update Package Metrics
+
+on:
+  schedule:
+    # Run at 2 AM UTC every day
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Update metrics
+        run: node scripts/update-metrics.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Check for changes
+        id: verify-changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Commit and push changes
+        if: steps.verify-changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "tyson.cung@gmail.com"
+          git config --local user.name "Tyson Cung"
+          git add README.md
+          git commit -m "🔄 Update package metrics
+
+          - Updated GitHub stars
+          - Updated NPM download counts
+          - Updated rankings based on new metrics
+          
+          [skip ci]"
+          git push
