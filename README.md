@@ -481,7 +481,7 @@ Rankings: 🥇 Top Choice | 🥈 Excellent | 🥉 Good | ⭐ Notable
 | 🥈 **[PayPal SDK](https://github.com/paypal/PayPal-node-SDK)** | 900+ | 100k+ | PayPal REST SDK |
 | 🥉 **[Square](https://github.com/square/square-nodejs-sdk)** | 80+ | 20k+ | Square API client |
 | 🥉 **[Braintree](https://github.com/braintree/braintree_node)** | 332 | 141.9k/w | Braintree SDK |
-| ⭐ **[Razorpay](https://github.com/razorpay/razorpay-node)** | 219 | 98.9k/w | Razorpay API client |
+| ⭐ **[Razorpay](https://github.com/razorpay/razorpay-node)** | 219 | 99.7k/w | Razorpay API client |
 
 ---
 
